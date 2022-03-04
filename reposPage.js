@@ -11,7 +11,6 @@ function getReposPageHtml(url,topic){
         }
         else{
             extractReposLink(html);
-            // console.log(html);
         }
     }
     function extractReposLink(html){

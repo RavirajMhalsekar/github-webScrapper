@@ -10,7 +10,6 @@ function cb(err,response,html){
         console.log("page not found");
     }
     else{
-        // console.log(html);
         extractHtml(html);
     }
 }

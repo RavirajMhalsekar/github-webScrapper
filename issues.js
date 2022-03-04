@@ -13,7 +13,6 @@ function getIssuesPageHtml(url,topic,repoName){
         }
         else{
             extractIssues(html);
-            // console.log(html);
         }
     }
     function extractIssues(html){
@@ -24,9 +23,7 @@ function getIssuesPageHtml(url,topic,repoName){
             let link = $(issueElemArr[i]).attr("href");
             link = "https://github.com" + link;
             Arr.push(link);
-            // console.log(link);
         }
-        // console.log(topic,repoName,"      ",Arr);
         let folderPath = path.join(__dirname,topic);
         dirCreater(folderPath);
         let filePath = path.join(folderPath, repoName + ".pdf");
@@ -36,8 +33,6 @@ function getIssuesPageHtml(url,topic,repoName){
         pdfDoc.pipe(fs.createWriteStream(filePath));
         pdfDoc.text(text);
         pdfDoc.end();
-
-        // fs.writeFileSync(filePath,text);
     }
 }
 
